@@ -1,5 +1,9 @@
 #! /usr/bin/env python
 
+# Get the latest weather information for a station from the Australian Bureau of
+# Meteorology website (www.gom.gov.au). Takes the URL of a web page containing a
+# stations observations as the only arguement.
+
 import openanything # from the book Dive into Python
 import sys
 
