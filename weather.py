@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-import openanything
+import openanything # from the book Dive into Python
 import sys
 
 from BeautifulSoup import BeautifulSoup
