@@ -23,3 +23,5 @@ if __name__ == "__main__":
     data = data.tbody.findAll(['tr'], limit = 1)[0].findAll(['td'])
 
     print "temp:" + data[1].contents[0], "humidity:" + data[4].contents[0], "pressure:" + data[11].contents[0], "rainfall:" + data[13].contents[0]
+    # Other fields:
+    # Apparent Temp.: "apptemp:" + data[2]/contents[0]
