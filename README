@@ -1,0 +1,11 @@
+This script will pull the current data for a single weather station from
+www.bom.gov.au.  It takes as it's only arguement the full URL to the web page
+for that station.
+
+e.g.
+python weather.py http://www.bom.gov.au/products/IDN60801/IDN60801.94768.shtml
+temp:23.0 humidity:75 pressure:1021.8 rainfall:0.0
+
+Please be nice to the BOM servers, and set 'Step' to 1800 when creating your
+data templates.  BOM website data is typically updated every 30 minutes, so it's
+pointless to update more often
