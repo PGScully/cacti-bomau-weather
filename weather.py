@@ -4,10 +4,9 @@
 # Meteorology website (www.gom.gov.au). Takes the URL of a web page containing a
 # stations observations as the only arguement.
 
-import openanything # from the book Dive into Python
 import sys
-
-from BeautifulSoup import BeautifulSoup
+import urllib
+import simplejson as json
 
 if __name__ == "__main__":
     try:
@@ -15,13 +14,10 @@ if __name__ == "__main__":
     except IndexError:
         sys.exit("Usage: weather.py url")
 
-    useragent = "myWeatherFetcher/1.0"   
-    htmlsource = openanything.fetch(url, agent=useragent)
+    data = json.load(urllib.urlopen(url))
 
-    data = BeautifulSoup(htmlsource['data'])
-    data = data.findAll(['table'], attrs = {"class" : "tabledata"}, limit = 1)[0]
-    data = data.tbody.findAll(['tr'], limit = 1)[0].findAll(['td'])
+    data = data["observations"]["data"][0]
 
-    print "temp:" + data[1].contents[0], "humidity:" + data[4].contents[0], "pressure:" + data[11].contents[0], "rainfall:" + data[13].contents[0]
+    print "temp:%s" % data["air_temp"], "humidity:%s" % data["rel_hum"], "pressure:%s" % data["press_qnh"], "rainfall:%s" % data["rain_trace"]
     # Other fields:
-    # Apparent Temp.: "apptemp:" + data[2]/contents[0]
+    # Apparent Temp.: "apptemp:%s" % data["apparent_t"]
