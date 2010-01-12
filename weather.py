@@ -18,6 +18,12 @@ if __name__ == "__main__":
 
     data = data["observations"]["data"][0]
 
-    print "temp:%s" % data["air_temp"], "humidity:%s" % data["rel_hum"], "pressure:%s" % data["press"], "rainfall:%s" % data["rain_trace"]
+    try:
+        temp = data["press"]
+        press_key = "press"
+    except KeyError:
+        press_key = "press_qnh"
+
+    print "temp:%s" % data["air_temp"], "humidity:%s" % data["rel_hum"], "pressure:%s" % data[press_key], "rainfall:%s" % data["rain_trace"]
     # Other fields:
     # Apparent Temp.: "apptemp:%s" % data["apparent_t"]
