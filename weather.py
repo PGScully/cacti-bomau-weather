@@ -18,6 +18,6 @@ if __name__ == "__main__":
 
     data = data["observations"]["data"][0]
 
-    print "temp:%s" % data["air_temp"], "humidity:%s" % data["rel_hum"], "pressure:%s" % data["press_qnh"], "rainfall:%s" % data["rain_trace"]
+    print "temp:%s" % data["air_temp"], "humidity:%s" % data["rel_hum"], "pressure:%s" % data["press"], "rainfall:%s" % data["rain_trace"]
     # Other fields:
     # Apparent Temp.: "apptemp:%s" % data["apparent_t"]
