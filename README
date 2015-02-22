@@ -1,7 +1,7 @@
 This script will pull the current data for a single weather station from
 www.bom.gov.au.  It takes as it's only arguement the full URL to the JSON data
 for that station.  Make sure to use the "JavaScript Object Notation format
-(JSON) in row-major order" URL provided at the bottam of a stations page.
+(JSON) in row-major order" URL provided at the bottom of a stations page.
 
 e.g.
 python weather.py http://www.bom.gov.au/fwo/IDN60801/IDN60801.94768.json
